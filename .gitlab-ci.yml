@@ -1,0 +1,11 @@
+image: busybox
+
+pages:
+    stage: deploy
+    script:
+        - rm README.md .gitlab-ci.yml
+    artifacts:
+        paths:
+            - public
+    only:
+        - main

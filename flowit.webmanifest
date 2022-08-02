@@ -1,0 +1,15 @@
+{
+    "name": "Flowit web",
+    "short_name": "Flowit",
+    "icons": [
+        {
+            "src": "https://raw.githubusercontent.com/Flowit-Game/Flowit/v3.2/app/src/main/play/listings/en-US/graphics/icon/ic_launcher_web.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "index.html",
+    "display": "standalone",
+    "theme_color": "#488DD4",
+    "background_color": "#E5E5E5"
+}

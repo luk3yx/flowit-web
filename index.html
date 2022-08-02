@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+Unofficial web port of Flowit
+
+Copyright © 2022 by luk3yx
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <!-- <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes"> -->
+        <title>Flowit web</title>
+        <script src="main.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="https://raw.githubusercontent.com/Flowit-Game/Flowit/v3.2/app/src/main/play/listings/en-US/graphics/icon/ic_launcher_web.png">
+        <link rel="manifest" href="flowit.webmanifest">
+    </head>
+    <body>
+        <div id="main-menu">
+            <div class="logo" onclick="setActiveScreen(packSelector)"></div>
+
+            <div id="select-pack" class="screen active">
+                Unofficial web port
+                <h1>Select pack</h1>
+
+                <div class="btn-wrapper">
+                    <button class="arrow-btn" style="--y: 5;" onclick="loadLevelList('levelsEasy.xml')"></button>
+                </div>
+                <div class="btn-wrapper">
+                    <button class="arrow-btn" style="--y: 6;" onclick="loadLevelList('levelsMedium.xml')"></button>
+                </div>
+                <div class="btn-wrapper">
+                    <button class="arrow-btn" style="--y: 7;" onclick="loadLevelList('levelsHard.xml')"></button>
+                </div>
+                <div class="btn-wrapper">
+                    <button class="arrow-btn" style="--x: 6; --y: 14;" onclick="loadLevelList('levelsCommunity.xml')"></button>
+                </div>
+
+                <button onclick="unregisterServiceWorkersAndReload()" class="bottom-left-btn">Update web app</button>
+            </div>
+
+            <div id="select-level" class="screen">
+
+            </div>
+        </div>
+
+        <div id="game-screen" class="screen">
+            <button onclick="currentLevel.returnToLevelSelector()" class="bottom-left-btn">Back</button>
+            <nav>
+                <button onclick="currentLevel.previous()?.go()" class="icon" style="--x: 0; --y: 10;"></button>
+                <button onclick="currentLevel.reset()" class="icon" style="--x: 2; --y: 10;"></button>
+
+                <div class="icon" style="--x: 12; --y: 10; --w: 3; width: 6.3rem;"></div>
+
+                <span style="flex-grow: 1;">
+                    <span id="moves"></span><br>
+                    <span id="best-score"></span>
+                </span>
+
+                <div class="icon" id="completed-icon"></div>
+                <button onclick="currentLevel.next()?.go()" class="icon" style="--x: 1; --y: 10;"></button>
+            </nav>
+            <div id="game-wrapper"></div>
+            <div id="levelCompleted" onclick="currentLevel.next().go()"></div>
+        </div>
+    </body>
+</html>
