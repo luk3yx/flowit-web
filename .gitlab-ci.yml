@@ -3,9 +3,12 @@ image: busybox
 pages:
     stage: deploy
     script:
-        - rm README.md .gitlab-ci.yml
+        - mkdir .public
+        - cp -r -- * .public
+        - rm .public/README.md
+        - mv .public public
     artifacts:
         paths:
-            - .
+            - public
     only:
         - main
