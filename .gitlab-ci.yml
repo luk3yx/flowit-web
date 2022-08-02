@@ -6,6 +6,6 @@ pages:
         - rm README.md .gitlab-ci.yml
     artifacts:
         paths:
-            - public
+            - .
     only:
         - main
