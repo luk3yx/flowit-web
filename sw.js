@@ -1,7 +1,7 @@
 // Service worker
 // Hopefully this does what it's supposed to and doesn't break
 
-const levelVersion = "v3.2";
+const levelVersion = "v3.3";
 const levelsBaseURL = `https://raw.githubusercontent.com/Flowit-Game/Flowit/${levelVersion}/app/src/main/assets/`;
 const name = `flowit-web-${levelVersion}`;
 

@@ -346,7 +346,7 @@ class Level {
 
 async function downloadLevels(path) {
     // Remember to update the baseurl in sw.js as well!
-    const res = await fetch("https://raw.githubusercontent.com/Flowit-Game/Flowit/v3.2/app/src/main/assets/" + path);
+    const res = await fetch("https://raw.githubusercontent.com/Flowit-Game/Flowit/v3.3/app/src/main/assets/" + path);
     const parser = new DOMParser();
     const xml = parser.parseFromString(await res.text(), "text/xml");
 
