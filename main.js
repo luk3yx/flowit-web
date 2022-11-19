@@ -317,6 +317,14 @@ class Level {
     next() {
         return levelsCache[this.path][this.idx + 1];
     }
+
+    goToNextLevel() {
+        const nextLevel = this.next();
+        if (nextLevel)
+            nextLevel.go();
+        else
+            this.returnToLevelSelector();
+    }
 }
 
 // function downloadLevels(path) {
@@ -346,7 +354,8 @@ class Level {
 
 async function downloadLevels(path) {
     // Remember to update the baseurl in sw.js as well!
-    const res = await fetch("https://raw.githubusercontent.com/Flowit-Game/Flowit/v3.3/app/src/main/assets/" + path);
+    const res = await fetch("https://raw.githubusercontent.com/Flowit-Game/" +
+        "Levels/252f43d752deaa6417b65ac32c7823f16f0f6ab2/" + path);
     const parser = new DOMParser();
     const xml = parser.parseFromString(await res.text(), "text/xml");
 

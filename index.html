@@ -73,10 +73,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
                 </span>
 
                 <div class="icon" id="completed-icon"></div>
-                <button onclick="currentLevel.next()?.go()" class="icon" style="--x: 1; --y: 10;"></button>
+                <button onclick="currentLevel.goToNextLevel()" class="icon" style="--x: 1; --y: 10;"></button>
             </nav>
             <div id="game-wrapper"></div>
-            <div id="levelCompleted" onclick="currentLevel.next().go()"></div>
+            <div id="levelCompleted" onclick="currentLevel.goToNextLevel()"></div>
         </div>
     </body>
 </html>

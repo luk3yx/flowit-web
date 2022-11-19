@@ -1,8 +1,8 @@
 // Service worker
 // Hopefully this does what it's supposed to and doesn't break
 
-const levelVersion = "v3.3";
-const levelsBaseURL = `https://raw.githubusercontent.com/Flowit-Game/Flowit/${levelVersion}/app/src/main/assets/`;
+const levelVersion = "252f43d752deaa6417b65ac32c7823f16f0f6ab2";
+const levelsBaseURL = `https://raw.githubusercontent.com/Flowit-Game/Levels/${levelVersion}`;
 const name = `flowit-web-${levelVersion}`;
 
 const pathsToCache = [
